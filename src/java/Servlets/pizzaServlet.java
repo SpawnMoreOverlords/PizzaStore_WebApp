@@ -26,10 +26,11 @@ public class pizzaServlet extends HttpServlet {
     private static String exception = null; //redirect here if any errors. 
     
     //Init the servlet
-    public pizzaServlet(ServletConfig config) throws ServletException {
+    public void init(ServletConfig config) throws ServletException {
         super.init(config);
         
-        index = config.getInitParameter("INDEX_PAGE");
+        //index = config.getInitParameter("INDEX_PAGE");
+        index = "hello testing";
         System.out.println(index);
     }
     
