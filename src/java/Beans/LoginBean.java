@@ -29,7 +29,7 @@ public class LoginBean {
         ResultSet rs = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:derby://localhost:1527/aleks", "aleks", "12345");
+            con = DriverManager.getConnection("jdbc:derby://localhost:1527/pizzaDB", "pizza", "pizza");
             if(con==null){
             System.out.println("dababase connection fail");
             }
