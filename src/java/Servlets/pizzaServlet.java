@@ -1,20 +1,22 @@
 package Servlets;
 
+
+import Beans.*; //import all of our beans
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Beans.*; //import all of our beans
-
 @WebServlet(name = "pizzaServlet", urlPatterns = {"/pizzaServlet"})
 public class pizzaServlet extends HttpServlet {
 
     //Varibles to hold the values of all of our JSP pages
     private static String index = null; //login page
+    private static String loginCheck = null;
     private static String loginError = null; //login error page
     private static String shop = null; //buy stuff page
     private static String checkout = null; //Confirm order page
@@ -24,8 +26,11 @@ public class pizzaServlet extends HttpServlet {
     private static String exception = null; //redirect here if any errors. 
     
     //Init the servlet
-    public void init(ServletConfig config) throws ServletException {
+    public pizzaServlet(ServletConfig config) throws ServletException {
         super.init(config);
+        
+        index = config.getInitParameter("INDEX_PAGE");
+        System.out.println(index);
     }
     
     
