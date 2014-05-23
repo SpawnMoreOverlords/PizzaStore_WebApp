@@ -35,7 +35,7 @@ public class LoginBean {
             }
             else{System.out.println("dababase connection success");}
             stmt = con.createStatement();
-            String sql = "select * from USERS where USERS.username=" + "'" + username + "'";
+            String sql = "select * from CUSTOMER where CUSTOMER.username=" + "'" + username + "'";
             rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 if (password.equals(rs.getString("password"))) {

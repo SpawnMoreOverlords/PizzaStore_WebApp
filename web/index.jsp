@@ -10,7 +10,7 @@
         <h1>Please login</h1>
         <form name="form" action="logincheck.jsp" method="post">
             Username：
-            <input type="text" name="username" value="Steve" />
+            <input type="text" name="username" value="bob" />
             <br>
             Password：
             <input type="password" name="password" value="" />
