@@ -31,7 +31,6 @@ public class ProductListBean {
 
             Class.forName("com.mysql.jdbc.Driver");
             conn=DriverManager.getConnection(url);
-            
 	    // create SQL statements to load the books into the list
 	    // each book is a BookBean object
 
@@ -104,7 +103,7 @@ public class ProductListBean {
 
     // search for a pizza by pizza Name
 
-    public PizzaBean getById(String name) {
+    public PizzaBean getByName(String name) {
 	PizzaBean pb = null;
 	Iterator iter = pizzaList.iterator();
         

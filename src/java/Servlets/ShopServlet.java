@@ -1,4 +1,4 @@
-package servlets;
+package Servlets;
 /*
  * Shop.java
  *
@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import beans.*;
 /**
  *
- * @author  Fredrik Ålund, Olle Eriksson
+ * @author  Fredrik ï¿½lund, Olle Eriksson
  * @version 1.0
  */
 public class ShopServlet extends HttpServlet {
