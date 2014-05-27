@@ -95,7 +95,7 @@ public class pizzaServlet extends HttpServlet {
         HttpSession sess = request.getSession();
         RequestDispatcher rd = null;
         ShoppingBean shoppingCart = getCart(request);
-	sess.setAttribute("currentUser", request.getRemoteUser());
+	//sess.setAttribute("currentUser", sess.getAttribute(""));
         sess.setAttribute("jdbcURL",jdbcURL);
         
         
@@ -135,7 +135,7 @@ public class pizzaServlet extends HttpServlet {
                                       request.getParameter("quantity"));
 			if(q <= 0) throw new NumberFormatException(
 						       "Invalid quantity");
-			shoppingCart.addBook(pb,q);                            
+			shoppingCart.addPizza(pb,q);                            
 		    }
 		    catch (NumberFormatException e) {
 			throw new ServletException("Invalid quantity specified");
@@ -158,7 +158,7 @@ public class pizzaServlet extends HttpServlet {
                     int q = Integer.parseInt(request.getParameter("quantity"));
                     if(q <= 0) throw new NumberFormatException(
                                                            "Illegal quantity");
-		    shoppingCart.removeBook(request.getParameter("pizzaname"),q);
+		    shoppingCart.removePizza(request.getParameter("pizzaname"),q);
 		}
 		catch (NumberFormatException e) {
 		    throw new ServletException("Illegal quantity specified");
@@ -226,7 +226,7 @@ public class pizzaServlet extends HttpServlet {
  
 	       // redirect (not forward)
 
-            response.sendRedirect(redirectPage);
+            response.sendRedirect(checkout);
           
        }
 
@@ -375,7 +375,7 @@ public class pizzaServlet extends HttpServlet {
 		    catch(Exception e){
 			throw new ServletException("Error saving profile", e);
 		    }
-		    response.sendRedirect(redirectPage);
+		    response.sendRedirect(checkout);
 		} 
 	    }
 	}	
@@ -398,18 +398,7 @@ public class pizzaServlet extends HttpServlet {
 	    rd = request.getRequestDispatcher(user);
 	    rd.forward(request, response);
         }   
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet pizzaServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet pizzaServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       
     }
     
     

@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Please login</h1>
-        <form name="form" action="logincheck.jsp" method="post">
+        <form name="form" action="loginCheck.jsp" method="post">
             Username：
             <input type="text" name="username" value="bob" />
             <br>

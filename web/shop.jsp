@@ -9,9 +9,9 @@
     <body  bgcolor="#ffffff">
         <h1>login success!</h1>
         Welcome：
-        <% String userName  = session.getAttribute("username").toString(); %>
+        <% String userName  = session.getAttribute("currentUser").toString(); %>
         <%= userName %>
-        <% System.out.println(session.getAttribute("username")); %>      
+        <% System.out.println(session.getAttribute("currentUser")); %>      
         <p></p>
         <img src="images/welcome.jpg" alt="welcome"/>
     </body>
