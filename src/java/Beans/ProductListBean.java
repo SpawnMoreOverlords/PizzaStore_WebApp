@@ -86,16 +86,16 @@ public class ProductListBean {
 
     public String getXml() {
         
-        BookBean bb=null;
-        Iterator iter = bookList.iterator();
+        PizzaBean pb=null;
+        Iterator iter = pizzaList.iterator();
         StringBuffer buff = new StringBuffer();
         
-        buff.append("<booklist>");
+        buff.append("<pizzalist>");
         while(iter.hasNext()){
-            bb=(BookBean)iter.next();
-            buff.append(bb.getXml());
+            pb=(PizzaBean)iter.next();
+            buff.append(pb.getXml());
         }
-        buff.append("</booklist>");        
+        buff.append("</pizzalist>");        
         
         return buff.toString();
     }

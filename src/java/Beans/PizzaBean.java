@@ -51,4 +51,29 @@ public class PizzaBean {
     public void setCompNum(int _compnum) {
         component_number = _compnum;
     }
+    // create an XML document describing the pizza
+    
+    public String getXml() {
+
+	// use a Stringbuffer (not String) to avoid multiple
+	// object creation
+
+     StringBuffer xmlOut = new StringBuffer();
+      
+      xmlOut.append("<pizza>");
+      xmlOut.append("<name>");
+      xmlOut.append(name);
+      xmlOut.append("</pizza>");      
+      xmlOut.append("<price>");
+      xmlOut.append(price);      
+      xmlOut.append("</price>");
+      xmlOut.append("<description><![CDATA[");
+      xmlOut.append(description);      
+      xmlOut.append("]]></description>");   
+      xmlOut.append("</book>");
+      
+      return xmlOut.toString();
+    
+        
+    }   
 }
