@@ -16,7 +16,10 @@ public class ProductListBean {
      private Collection pizzaList;
     private String url=null;
 
-    
+   // public ProductListBean()throws Exception{
+     //   url= "jdbc:mysql://localhost:3306/pizzaDB?user=root&amp;password=&amp;"
+       //         + "verifyServerCertificate=false&amp;useSSL=true";
+   // }
     /** Creates a new instance of BookListBean */
 
     public ProductListBean(String _url) throws Exception {
@@ -121,8 +124,8 @@ public class ProductListBean {
 
     public static void main(String[] args){
         try{
-	    //ProductListBean plb = new ProductListBean();
-	    //System.out.println(plb.getXml());
+	    ProductListBean plb = new ProductListBean();
+	    System.out.println(plb.getXml());
         }
         catch(Exception e){
 	    System.out.println(e.getMessage());

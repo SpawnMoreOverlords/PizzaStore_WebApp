@@ -32,7 +32,7 @@
   </xsl:template>
   
   <xsl:template match="pizza">
-    <form method="post" action="shop">
+    <form method="post" action="pizzaServlet">
     <tr bgcolor="#FFDC75" >
         <td>
             <xsl:value-of select="name"/>

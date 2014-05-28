@@ -4,11 +4,11 @@
     Author     : Steve Hoult
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" import="Beans.*" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="Beans.*,Tags.*" %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml"%>
-
+<%@taglib prefix="pizzashop" uri="/WEB-INF/tlds/pizzashop"%>
 <html>
 <head><title>PizzaShop::pizza</title></head>
 <body>
@@ -18,29 +18,28 @@
 </jsp:useBean>
 
 
-<c:set var="pizzalist_xslt">
-   <c:import url="pizzalist_xslt.xsl"/>
+<c:set var="pizzalistsheet">
+   <c:import url="pizzalistsheet.xsl"/>
 </c:set> 
 
-<x:transform xslt="${pizzalist_xslt}">
+<x:transform xslt="${pizzalistsheet}">
     <jsp:getProperty name="pizzaList" property="xml"/>
 </x:transform>
 
 
 
-<c:set var="shoppingcart_xslt">
-   <c:import url="shoppingcart_xslt.xsl"/>
+<c:set var="shoppingcartsheet">
+   <c:import url="shoppingcartsheet.xsl"/>
 </c:set> 
-<x:transform xslt="${shoppingcart_xslt}">
+<x:transform xslt="${shoppingcartsheet}">
    <pizzashop:shoppingcart/>
 </x:transform>
-
 <c:if test="${sessionScope.currentUser != null}">
-  <form action=shop?action=profile method=post>
+  <form action=pizzaServlet?action=profile method=post>
     <input type="submit" value="Update Profile">
   </form>
 
-  <form action=shop?action=logout method=post>
+  <form action=pizzaServlet?action=logout method=post>
     <input type="submit" value="Logout">
   </form>
 </c:if>
