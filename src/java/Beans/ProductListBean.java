@@ -122,13 +122,5 @@ public class ProductListBean {
     // a main used for testing, remember that a bean can be run
     // without a container
 
-    public static void main(String[] args){
-        try{
-	    ProductListBean plb = new ProductListBean("jdbc:mysql://localhost:3306/pizzaDB?user=root&amp;password=&ampverifyServerCertificate=false&amp;useSSL=true");
-	    System.out.println(plb.getXml());
-        }
-        catch(Exception e){
-	    System.out.println(e.getMessage());
-        }
-    }
+    
 }

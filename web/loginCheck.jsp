@@ -10,9 +10,9 @@ user.setUsername(request.getParameter("username"));
 user.setPassword(request.getParameter("password"));    
 if(user.checklogin()){
     String username = request.getParameter("username");
-    session.setAttribute("username", username);
+    session.setAttribute("currentUser", username);
     %>
-    <jsp:forward page = "shop.jsp"></jsp:forward>
+    <jsp:forward page = "exception.jsp"></jsp:forward>
     <% } else {  %>
     <jsp:forward page="loginError.jsp"></jsp:forward>
 <% }%>
