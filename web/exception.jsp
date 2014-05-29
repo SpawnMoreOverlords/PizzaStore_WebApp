@@ -27,14 +27,14 @@
 </x:transform>
 
 
-/*
+
 <c:set var="shoppingcartsheet">
    <c:import url="shoppingcartsheet.xsl"/>
 </c:set> 
 <x:transform xslt="${shoppingcartsheet}">
    <pizzashop:shoppingcart/>
 </x:transform>
-*/    
+
     
 <c:if test="${sessionScope.currentUser != null}">
   <form action=pizzaServlet?action=profile method=post>

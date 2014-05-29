@@ -63,14 +63,14 @@ public class PizzaBean {
       xmlOut.append("<pizza>");
       xmlOut.append("<name>");
       xmlOut.append(name);
-      xmlOut.append("</pizza>");      
+      xmlOut.append("</name>");
       xmlOut.append("<price>");
       xmlOut.append(price);      
       xmlOut.append("</price>");
       xmlOut.append("<description><![CDATA[");
       xmlOut.append(description);      
       xmlOut.append("]]></description>");   
-      xmlOut.append("</book>");
+      xmlOut.append("</pizza>");
       
       return xmlOut.toString();
     

@@ -32,7 +32,8 @@ public class ProductListBean {
 	    // get a database connection and load the JDBC-driver
 
             Class.forName("com.mysql.jdbc.Driver");
-            conn=DriverManager.getConnection("jdbc:derby://localhost:1527/pizzaDB", "pizza", "pizza");
+           // conn=DriverManager.getConnection("jdbc:derby://localhost:1527/pizzaDB", "pizza", "pizza");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/pizzaDB", "root", "");
 	    // create SQL statements to load the books into the list
 	    // each book is a BookBean object
 

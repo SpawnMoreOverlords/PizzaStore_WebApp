@@ -26,6 +26,9 @@
     <td>
         <strong>Price</strong>
     </td>
+    <td>
+        <strong>Quantity</strong>
+    </td>
     </tr>
         <xsl:apply-templates/>
    </table>
@@ -54,7 +57,7 @@
         <td>
             <input type="submit" value="BUY"/>
             <xsl:element name="a"> <!-- A link in XSLT -->
-              <xsl:attribute name="href"><xsl:text disable-output-escaping="yes"><![CDATA[shop?action=detail&pizzaname=]]></xsl:text><xsl:value-of select="name"/></xsl:attribute>
+              <xsl:attribute name="href"><xsl:text disable-output-escaping="yes"><![CDATA[pizzaServlet?action=detail&pizzaname=]]></xsl:text><xsl:value-of select="name"/></xsl:attribute>
               <xsl:text>Detail</xsl:text>
             </xsl:element>
         </td>

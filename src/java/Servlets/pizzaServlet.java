@@ -41,8 +41,10 @@ public class pizzaServlet extends HttpServlet {
         
         index = "hello testing";
         System.out.println(index);
-        jdbcURL="jdbc:derby://localhost:1527/pizzaDB?user=pizza&amp;password=pizza&amp;"
-                + "verifyServerCertificate=false&amp;useSSL=true";
+       // jdbcURL="jdbc:derby://localhost:1527/pizzaDB?user=pizza&amp;password=pizza&amp;"
+         //       + "verifyServerCertificate=false&amp;useSSL=true";
+        jdbcURL="jdbc:mysql://localhost:3306/pizzaDB?user=root&amp;password=&amp;"
+               + "verifyServerCertificate=false&amp;useSSL=true";
         shop="http://localhost:8080/PizzaStore_WebApp/shop.jsp";
         manager="http://localhost:8080/PizzaStore_WebApp/manager.jsp";
         checkout="http://localhost:8080/PizzaStore_WebApp/checkout.jsp";
