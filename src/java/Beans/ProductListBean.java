@@ -21,6 +21,62 @@ public class ProductListBean {
        //         + "verifyServerCertificate=false&amp;useSSL=true";
    // }
     /** Creates a new instance of BookListBean */
+    
+     public ProductListBean() throws Exception {
+        Connection conn =null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        pizzaList = new ArrayList();    // a list
+        try{
+            
+	    // get a database connection and load the JDBC-driver
+
+            Class.forName("com.mysql.jdbc.Driver");
+            conn=DriverManager.getConnection("jdbc:derby://localhost:1527/pizzaDB", "pizza", "pizza");
+	    // create SQL statements to load the books into the list
+	    // each book is a BookBean object
+
+            stmt = conn.createStatement();
+            String sql="SELECT NAME, PRICE, ";
+            sql += "DESCRIPTION FROM PRODUCT";
+            rs= stmt.executeQuery(sql);
+            
+	    // analyze the result set
+
+            while(rs.next()){
+                
+                PizzaBean pb = new PizzaBean();
+                
+                pb.setName(rs.getString("NAME"));
+                pb.setPrice(rs.getInt("PRICE"));
+                pb.setDes(rs.getString("DESCRIPTION"));               
+                pizzaList.add(pb);
+                
+            }
+        
+        }
+        catch(SQLException sqle){
+            throw new Exception(sqle);
+        }
+
+	// note the we always try to close all services
+	// even if one or more fail to close
+	
+        finally{
+ 	    try{
+              rs.close();
+            }
+            catch(Exception e) {}
+            try{
+              stmt.close();
+            }
+	    catch(Exception e) {}
+            try {
+              conn.close();
+            }
+            catch(Exception e){}
+        }
+    }
 
     public ProductListBean(String _url) throws Exception {
         url=_url;
@@ -38,8 +94,8 @@ public class ProductListBean {
 	    // each book is a BookBean object
 
             stmt = conn.createStatement();
-            String sql="SELECT NAME, PRICE ";
-            sql += "DESCRIPTION FROM PRODUCT,";
+            String sql="SELECT NAME, PRICE, ";
+            sql += "DESCRIPTION FROM PRODUCT";
             rs= stmt.executeQuery(sql);
             
 	    // analyze the result set
@@ -81,7 +137,7 @@ public class ProductListBean {
     
     // return the pizzalist
     
-    java.util.Collection getProduktLista() {
+    java.util.Collection getProductList() {
         return pizzaList;
     }
     
@@ -116,7 +172,7 @@ public class ProductListBean {
                 return pb;
 	    }
 	}
-	return null;
+	return pb;
     }
     
     // a main used for testing, remember that a bean can be run

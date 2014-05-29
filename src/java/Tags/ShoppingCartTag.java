@@ -57,10 +57,12 @@ public class ShoppingCartTag extends TagSupport {
 	    // and generate an XML document using the proper method
 	    // in the shoppingcart
 	    
+            
 	    JspWriter out = pageContext.getOut();
 	    javax.servlet.http.HttpSession sess = pageContext.getSession();
 	    ShoppingBean sb = (ShoppingBean)sess.getAttribute("shoppingCart");
 	    out.println(sb.getXml());
+            
 	}
 	catch(Exception e){
 	    throw new JspException(e);
