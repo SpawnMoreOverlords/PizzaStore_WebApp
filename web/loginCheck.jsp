@@ -1,7 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@page import = "Beans.LoginBean"%>
+<%@page import = "Beans.*"%>
 <jsp:useBean id = "user" class = "Beans.LoginBean" scope="page">     
     <jsp:setProperty  name="user" property="*"/>  
 </jsp:useBean>
@@ -11,6 +11,8 @@ user.setPassword(request.getParameter("password"));
 if(user.checklogin()){
     String username = request.getParameter("username");
     session.setAttribute("currentUser", username);
+    ShoppingBean sb=new ShoppingBean();
+    session.setAttribute("shoppingCart", sb);
     %>
     <jsp:forward page = "exception.jsp"></jsp:forward>
     <% } else {  %>

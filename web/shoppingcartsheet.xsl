@@ -30,7 +30,7 @@
         <xsl:apply-templates/>
       <tr>
       <td colspan="2">
-        <a href="shop?action=checkout">Checkout</a>
+        <a href="pizzaServlet?action=checkout">Checkout</a>
       </td>
     </tr>
    </table>

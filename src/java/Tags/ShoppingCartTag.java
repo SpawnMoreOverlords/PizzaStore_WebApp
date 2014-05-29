@@ -60,6 +60,7 @@ public class ShoppingCartTag extends TagSupport {
             
 	    JspWriter out = pageContext.getOut();
 	    javax.servlet.http.HttpSession sess = pageContext.getSession();
+           // ShoppingBean sb=new ShoppingBean();
 	    ShoppingBean sb = (ShoppingBean)sess.getAttribute("shoppingCart");
 	    out.println(sb.getXml());
             
