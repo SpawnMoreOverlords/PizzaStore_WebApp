@@ -5,6 +5,7 @@
         <group>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/web/pizzalistsheet.xsl</file>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Beans/LoginBean.java</file>
+            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Tags/ShoppingCartTag.java</file>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/web/loginCheck.jsp</file>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Beans/ProductListBean.java</file>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Servlets/pizzaServlet.java</file>
