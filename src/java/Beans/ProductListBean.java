@@ -124,7 +124,7 @@ public class ProductListBean {
 
     public static void main(String[] args){
         try{
-	    ProductListBean plb = new ProductListBean();
+	    ProductListBean plb = new ProductListBean("jdbc:mysql://localhost:3306/pizzaDB?user=root&amp;password=&ampverifyServerCertificate=false&amp;useSSL=true");
 	    System.out.println(plb.getXml());
         }
         catch(Exception e){
