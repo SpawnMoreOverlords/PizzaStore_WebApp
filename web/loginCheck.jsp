@@ -14,7 +14,7 @@ if(user.checklogin()){
     ShoppingBean sb=new ShoppingBean();
     session.setAttribute("shoppingCart", sb);
     %>
-    <jsp:forward page = "exception.jsp"></jsp:forward>
+    <jsp:forward page = "shop.jsp"></jsp:forward>
     <% } else {  %>
     <jsp:forward page="loginError.jsp"></jsp:forward>
 <% }%>

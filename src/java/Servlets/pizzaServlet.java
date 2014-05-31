@@ -39,22 +39,22 @@ public class pizzaServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         
-        index = "hello testing";
+        index = "hello servlet";
         System.out.println(index);
        // jdbcURL="jdbc:derby://localhost:1527/pizzaDB?user=pizza&amp;password=pizza&amp;"
          //       + "verifyServerCertificate=false&amp;useSSL=true";
         jdbcURL="jdbc:mysql://localhost:3306/pizzaDB?user=root&amp;password=&amp;"
                + "verifyServerCertificate=false&amp;useSSL=true";
-        shop="http://localhost:8080/PizzaStore_WebApp/shop.jsp";
-        manager="http://localhost:8080/PizzaStore_WebApp/manager.jsp";
-        checkout="http://localhost:8080/PizzaStore_WebApp/checkout.jsp";
-        thankYou="http://localhost:8080/PizzaStore_WebApp/thankYou.jsp";
-        profile="http://localhost:8080/PizzaStore_WebApp/profile.jsp";
-        index="http://localhost:8080/PizzaStore_WebApp/index.jsp";
-        loginCheck="http://localhost:8080/PizzaStore_WebApp/loginCheck.jsp";
-        loginError="http://localhost:8080/PizzaStore_WebApp/loginError.jsp";
-        exception="http://localhost:8080/PizzaStore_WebApp/exception.jsp";
-        user="http://localhost:8080/PizzaStore_WebApp/user.jsp";
+        shop="shop.jsp";
+        manager="manager.jsp";
+        checkout="checkout.jsp";
+        thankYou="thankYou.jsp";
+        profile="profile.jsp";
+        index="index.jsp";
+        loginCheck="loginCheck.jsp";
+        loginError="loginError.jsp";
+        exception="exception.jsp";
+        user="user.jsp";
         // get the books from the database using a bean
       
         try{
@@ -252,7 +252,7 @@ public class pizzaServlet extends HttpServlet {
 	    ProfileBean p = new ProfileBean(jdbcURL);
 	    try {
 		p.populate((String)sess.getAttribute("currentUser"));
-		role = p.getRoles();
+		//role = p.getRoles();
             }
             catch(Exception e) {
                 throw new ServletException("Error loading profile", e);
@@ -261,14 +261,14 @@ public class pizzaServlet extends HttpServlet {
 
 	    // flag all roles that the user is associated with
 
-	    Set<String> k = role.keySet();
-	    Iterator<String> i = k.iterator();
-	    while (i.hasNext()) {
-		String st = i.next();
-		if(request.isUserInRole(st)) role.put(st,true);
-	    }
-	    p.setRole(role);
-	    sess.setAttribute("roles",role);
+//	    Set<String> k = role.keySet();
+//	    Iterator<String> i = k.iterator();
+//	    while (i.hasNext()) {
+//		String st = i.next();
+//		if(request.isUserInRole(st)) role.put(st,true);
+//	    }
+//	    p.setRole(role);
+//	    sess.setAttribute("roles",role);
 	    rd = request.getRequestDispatcher(profile);
 	    rd.forward(request, response);
         }   
