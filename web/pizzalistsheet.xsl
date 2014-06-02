@@ -57,7 +57,7 @@
         <td>
             <input type="submit" value="BUY"/>
             <xsl:element name="a"> <!-- A link in XSLT -->
-              <xsl:attribute name="href"><xsl:text disable-output-escaping="yes"><![CDATA[pizzaServlet?action=detail&pizzaname=]]></xsl:text><xsl:value-of select="name"/></xsl:attribute>
+              <xsl:attribute name="href"><xsl:text disable-output-escaping="yes"><![CDATA[pizzaServlet?action=checkout&pizzaname=]]></xsl:text><xsl:value-of select="name"/></xsl:attribute>
               <xsl:text>Detail</xsl:text>
             </xsl:element>
         </td>
@@ -66,7 +66,7 @@
     <xsl:element name="input"> <!--A ordinary input in XSLT-->
       <xsl:attribute name="type">hidden</xsl:attribute>
       <xsl:attribute name="value"><xsl:value-of select="name"/></xsl:attribute>
-      <xsl:attribute name="name">name</xsl:attribute>
+      <xsl:attribute name="name">pizzaname</xsl:attribute>
     </xsl:element>
     
     <input type="hidden" name="action" value="add"/>

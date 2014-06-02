@@ -60,7 +60,7 @@
       <xsl:element name="input"> <!--A ordinary input in XSLT-->
         <xsl:attribute name="type">hidden</xsl:attribute>
         <xsl:attribute name="value"><xsl:value-of select="pizza/name"/></xsl:attribute>
-        <xsl:attribute name="name">name</xsl:attribute>
+        <xsl:attribute name="name">pizzaname</xsl:attribute>
       </xsl:element>
       <xsl:element name="input"> <!--A ordinary input in XSLT-->
         <xsl:attribute name="type">hidden</xsl:attribute>

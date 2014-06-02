@@ -166,10 +166,11 @@ public class ProductListBean {
     public PizzaBean getByName(String name) {
 	PizzaBean pb = null;
 	Iterator iter = pizzaList.iterator();
-        
+        int i=0;
 	while(iter.hasNext()){
 	    pb=(PizzaBean)iter.next();
-	    if(pb.getName()== name){
+	    if(pb.getName().equals(name)){
+                System.out.println("find pizza by name");
                 return pb;
 	    }
 	}

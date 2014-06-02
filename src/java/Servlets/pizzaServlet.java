@@ -116,13 +116,13 @@ public class pizzaServlet extends HttpServlet {
         else if(request.getParameter("action").equals("add")){
             
 	    // verify pizzaname and quantity
-
+            System.out.println("adds a pizza");
             if (request.getParameter("pizzaname") != null && 
                 request.getParameter("quantity")!=null ){
                 PizzaBean pb = null;
-		
+		System.out.println("got pizzaname and quantity");
 		// search the pizza in our shop
-
+                  System.out.println(request.getParameter("pizzaname"));
   	        pb = pizzaList.getByName(request.getParameter("pizzaname"));
                 if(pb==null){
                     throw new ServletException("The pizza is not in stock.");
@@ -137,6 +137,7 @@ public class pizzaServlet extends HttpServlet {
                                       request.getParameter("quantity"));
 			if(q <= 0) throw new NumberFormatException(
 						       "Invalid quantity");
+                        System.out.println(pb.getName());
 			shoppingCart.addPizza(pb,q);                            
 		    }
 		    catch (NumberFormatException e) {
