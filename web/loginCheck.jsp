@@ -7,15 +7,20 @@
 </jsp:useBean>
 <%
 user.setUsername(request.getParameter("username"));
-user.setPassword(request.getParameter("password"));    
+user.setPassword(request.getParameter("password"));
 if(user.checklogin()){
+    if(user.getPermission()==0)
+    {
     String username = request.getParameter("username");
+    
     session.setAttribute("currentUser", username);
     ShoppingBean sb=new ShoppingBean();
     session.setAttribute("shoppingCart", sb);
     %>
     <jsp:forward page = "shop.jsp"></jsp:forward>
-    <% } else {  %>
+    <% }else if(user.getPermission()==1) {  %>
+    <jsp:forward page="manager.jsp"></jsp:forward>
+<% }}else {  %>
     <jsp:forward page="loginError.jsp"></jsp:forward>
 <% }%>
 <html>

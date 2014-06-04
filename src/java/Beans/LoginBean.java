@@ -6,7 +6,14 @@ public class LoginBean {
 
     private String username;
     private String password;
-
+    private int permission;
+    
+    public void setPermission(int _Permission){
+        this.permission=_Permission;
+    }
+    public int getPermission(){
+        return this.permission;
+    } 
     public void setUsername(String _Username){
         this.username = _Username;
     }
@@ -40,6 +47,8 @@ public class LoginBean {
             rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 if (password.equals(rs.getString("password"))) {
+                    permission=rs.getInt("permission");
+                    //System.out.println(permission);
                     loginflag = true;
                 }
             }

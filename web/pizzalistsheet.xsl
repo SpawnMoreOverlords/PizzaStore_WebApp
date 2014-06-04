@@ -36,7 +36,7 @@
   
   <xsl:template match="pizza">
     <form method="post" action="pizzaServlet">
-    <tr bgcolor="#FFDC75" >
+    <tr bgcolor="#R3FERF" >
         <td>
             <xsl:value-of select="name"/>
         </td>
@@ -56,10 +56,7 @@
         </td>
         <td>
             <input type="submit" value="BUY"/>
-            <xsl:element name="a"> <!-- A link in XSLT -->
-              <xsl:attribute name="href"><xsl:text disable-output-escaping="yes"><![CDATA[pizzaServlet?action=checkout&pizzaname=]]></xsl:text><xsl:value-of select="name"/></xsl:attribute>
-              <xsl:text>Detail</xsl:text>
-            </xsl:element>
+    
         </td>
     </tr>
     

@@ -4,10 +4,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP login</title>
+        <title>PizzaShop::login</title>
     </head>
     <body>
-        <h1>Please login</h1>
+        <h1>Welcome to KAS Pizzashop! Please login</h1>
         <form name="form" action="loginCheck.jsp" method="post">
             Username：
             <input type="text" name="username" value="bob" />

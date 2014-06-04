@@ -117,7 +117,12 @@ public class pizzaServlet extends HttpServlet {
             
 	    // verify pizzaname and quantity
             System.out.println("adds a pizza");
-            if (request.getParameter("pizzaname") != null && 
+            if("Hawaii".equals(request.getParameter("pizzaname"))||"HAWAII".equals(request.getParameter("pizzaname")))
+            {
+                rd = request.getRequestDispatcher(exception);
+                rd.forward(request,response);
+            } 
+            else if (request.getParameter("pizzaname") != null && 
                 request.getParameter("quantity")!=null ){
                 PizzaBean pb = null;
 		System.out.println("got pizzaname and quantity");

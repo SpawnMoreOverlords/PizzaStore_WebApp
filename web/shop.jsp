@@ -8,7 +8,6 @@
 <body>
 <h2>KAS Pizza Shop</h2>
 <jsp:useBean id= "pizzaList" class= "Beans.ProductListBean" scope="application">
-    Error, the bean should have been created in the servlet!
 </jsp:useBean>
 
 
