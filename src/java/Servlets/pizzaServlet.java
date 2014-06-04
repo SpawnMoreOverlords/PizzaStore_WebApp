@@ -281,6 +281,10 @@ public class pizzaServlet extends HttpServlet {
 	else if(request.getParameter("action").equals("profilechange") ||
                 request.getParameter("action").equals("usercreate")){
 	    ProfileBean pb = (ProfileBean)sess.getAttribute("profile");
+            if(pb==null)
+            {
+                        System.out.println("cannot get profile");
+            }
 	    String u;
 	    if (request.getParameter("action").equals("profilechange")) 
 		u = (String)sess.getAttribute("currentUser");
@@ -296,7 +300,10 @@ public class pizzaServlet extends HttpServlet {
 	    String zip = request.getParameter("zip");
 	    String city = request.getParameter("city");
 	    String country = request.getParameter("country");
-	    
+	    if(pb==null)
+            {
+                pb=new ProfileBean(jdbcURL);
+            }
 	    pb.setUser(u);
 	    pb.setPassword(p1);
 	    pb.setName(name);
@@ -304,17 +311,6 @@ public class pizzaServlet extends HttpServlet {
 	    pb.setZip(zip);
 	    pb.setCity(city);
 	    pb.setCountry(country);   
-	    HashMap<String, Boolean> r =
-                (HashMap<String,Boolean>) sess.getAttribute("roles");
-	    Set<String> k = r.keySet();
-	    Iterator<String> i = k.iterator();
-	    while (i.hasNext()) {
-                String st = i.next();
-                String res = request.getParameter(st); 
-                if (res != null) r.put(st, true);
-                else r.put(st,false);
-	    }           
-	    pb.setRole(r);
 
 	    // if this a new user, try to add him to the database
 
@@ -378,7 +374,9 @@ public class pizzaServlet extends HttpServlet {
 		    catch(Exception e){
 			throw new ServletException("Error saving profile", e);
 		    }
-		    response.sendRedirect(checkout);
+                    request.setAttribute("currentUser", pb.getName());
+		    rd = request.getRequestDispatcher(shop);
+		    rd.forward(request, response);
 		} 
 	    }
 	}	
@@ -428,35 +426,7 @@ public class pizzaServlet extends HttpServlet {
 	String zip = request.getParameter("zip");
 	String city = request.getParameter("city");
 	String country = request.getParameter("country");
-	HashMap<String,Boolean> r =
-	    (HashMap<String,Boolean>) sess.getAttribute("roles");
-	Set<String> k = r.keySet();
-	int count=0;
-	Iterator<String> i = k.iterator();
-	while (i.hasNext()) {
-	    String st = request.getParameter(i.next());
-	    if(st != null) count++;
-	}           
 	
-	// validate
-
-	if(count == 0) {
-	    sess.setAttribute("passwordInvalid",
-			      "You must select at least one role");
-	    return false;
-	}
-	else if( u == null || u.length() < 1) {
-	    sess.setAttribute("passwordInvalid",
-			      "User name must not be empty, retry!");
-	    return false;
-	    
-	}
-	if(!request.isUserInRole("admin") && 
-	   request.getParameter("admin") != null) {
-	    sess.setAttribute("passwordInvalid",
-			      "You must be in role admin to set role admin");
-	    return false;
-	}
 	if(p1 == null || p2 == null || p1.length() < 1) {
 	    sess.setAttribute("passwordInvalid",
 			      "Password must not be empty, retry!");

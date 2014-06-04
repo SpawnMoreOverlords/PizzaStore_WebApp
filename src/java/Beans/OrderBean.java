@@ -47,7 +47,7 @@ public class OrderBean  {
    */
   public void saveOrder() throws Exception{
     orderSQL="INSERT INTO ORDERS(USERNAME,";
-    orderSQL += " SHIPPING_ADRESS, SHIPPING_ZIPCODE, SHIPPING_CITY)";
+    orderSQL += " SHIPPING_ADDRESS, SHIPPING_ZIPCODE, SHIPPING_CITY)";
     orderSQL += " VALUES(?,?,?,?)";
     try{
 

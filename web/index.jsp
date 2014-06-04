@@ -18,5 +18,9 @@
             <input type="submit" value="Login" name="submit" />
             
         </form>
+        <form action="user.jsp" method=post>
+            <input type="submit" value="Sign Up" name="submit"/>
+        </form>
+
     </body>
 </html>

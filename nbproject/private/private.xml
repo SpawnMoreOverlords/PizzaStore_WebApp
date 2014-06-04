@@ -4,10 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/web/profile.jsp</file>
-            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Beans/ProductListBean.java</file>
-            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Beans/ProfileBean.java</file>
+            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Beans/ProfileUpdateBean.java</file>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Servlets/pizzaServlet.java</file>
             <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/web/shop.jsp</file>
+            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/web/thankYou.jsp</file>
+            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/web/index.jsp</file>
+            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/web/user.jsp</file>
+            <file>file:/Users/Kimi/NetBeansProjects/PizzaStore_WebApp/src/java/Tags/ProfileTag.java</file>
         </group>
     </open-files>
 </project-private>

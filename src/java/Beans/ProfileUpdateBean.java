@@ -97,18 +97,6 @@ public class ProfileUpdateBean {
             sql += pb.getZip() +"', '" + pb.getCity() + "', '";
 	    sql += pb.getCountry() + "')";
             rs = stmt.executeUpdate(sql);
-	    HashMap<String,Boolean> a = pb.getRole();
-            Set<String> k = a.keySet();
-            Iterator<String> i = k.iterator();
-            
-            while (i.hasNext()) {
-              String st = i.next();
-              if(a.get(st)){
-	          sql2 = "INSERT INTO USER_ROLES(USER_NAME, ROLE_NAME)";
-		  sql2 += "VALUES (" + "'" + pb.getUser() + "', '" + st + "')";
-		  rs = stmt.executeUpdate(sql2);
-              }
-            }
             conn.commit();
 	}   
 	catch(SQLException sqle){

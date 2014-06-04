@@ -5,13 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml"%>
+<%@taglib prefix="pizzashop" uri="/WEB-INF/tlds/pizzashop"%>
+
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<head><title>PizzaShop::Thank you</title></head>
+<body>
+	<h1>Thank you</h1>
+  Your order has been saved to the database and will be shipped shortly<br /><br />
+  <a href="pizzaServlet?action=show">Buy more books</a>
+  
+</body>
 </html>
